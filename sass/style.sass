@@ -1,0 +1,643 @@
+
+    
+/* --------ROOT VARIABLES------- */
+
+
+:root
+    --color-primary:#7380ec
+    --color-danger:#ff7782
+    --color-success: #41f1b6
+    --color-warning:#ffbb55
+    --color-white:#fff
+    --color-info-dark:#7d8da1
+    --color-info-light: #dce1eb
+    --color-dark: #363949
+    --color-light: rgba(132, 139, 200, 0.18)
+    --color-primary-variant:#111e88
+    --color-dark-variant: #677483
+    --color-background:#f6f6f9
+    --card-border-radius: 2rem
+    --border-radius-1: 0.4rem
+    --border-radius-2: 0.8rem
+    --border-radius-3: 1.2rem
+    --card-padding: 1.8rem
+    --padding-1: 1.2rem
+    --box-shadow: 0 2rem 3rem var(--color-light)
+
+
+.dark-theme-variables
+    --color-white:#202528
+    --color-dark: #edeffd
+    --color-light: rgba(0, 0, 0, 0.4)
+    --color-dark-variant: #a3bdcc
+    --color-background:#181a1e
+    --box-shadow: 0 2rem 3rem var(--color-light)
+
+*
+    margin: 0
+    padding: 0
+    outline: 0
+    appearance: none
+    border: 0
+    text-decoration: none
+    list-style: none
+    box-sizing: border-box
+
+
+html
+    font-size: 14px
+
+
+body
+    width: 100vw
+    height: 100vh
+    font-family: 'Poppins', sans-serif
+    font-size: 0.88rem
+    background: var(--color-background)
+    user-select: none
+    overflow-x: hidden
+
+
+.container
+    display: grid
+    width: 96%
+    margin: 0 auto
+    gap: 1.8rem
+    grid-template-columns: 14rem auto 23rem
+
+
+
+a
+    color: var(--color-dark)
+
+img
+    display: block
+    width: 100%
+
+h1
+    font-size: 1.8rem
+
+h2
+    font-size: 1.4rem
+
+h3
+    font-size: 0.87rem
+
+h4
+    font-size: 0.8rem
+
+h5
+    font-size: 0.77rem
+
+small
+    font-size: 0.75rem
+
+
+.profile-photo
+    width: 2.8rem
+    height: 2.8rem
+    border-radius: 50%
+    overflow: hidden
+
+.text-muted
+    color: var(--color-info-dark)
+
+p
+    color: var(--color-dark-variant)
+
+b
+    color: var(--color-dark)
+
+.primary
+    color: var(--color-primary)
+
+.danger
+    color: var(--color-danger)
+
+.warning
+    color: var(--color-warning)
+
+.success
+    color: var(--color-success)
+
+
+aside
+    height: 100vh
+    .close
+        display: none
+
+    h3
+        font-weight: 500
+
+    .top
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-top: 1.4rem
+
+
+    .logo
+        display: flex
+        align-items: center
+        gap: 0.8rem
+
+        img
+            width: 2rem
+            height: 2rem
+            
+    .sidebar
+        display: flex
+        flex-direction: column
+        height: 86vh
+        position: relative
+        top: 3rem
+
+        a
+            display: flex
+            color: var(--color-info-dark)
+            margin-left: 2rem
+            gap: 1rem
+            align-items: center
+            position: relative
+            height: 3.7rem
+            transition: all 300ms ease
+
+            span
+                font-size: 1.6rem
+                transition: all 300ms ease 
+
+
+
+            &:hover
+                color: var(--color-primary)
+                span
+                    margin-left: 1rem
+
+            &:last-child
+                position: absolute
+                bottom: 2rem
+                width: 100%
+
+
+
+        .active
+            background: var(--color-light)
+            color: var(--color-primary)
+            margin-left: 0
+
+            span
+                color: var(--color-primary)
+                margin-left: calc( 1rem - 3px )
+
+            &::before
+                content: ""
+                width: 6px
+                height: 100%
+                background: var(--color-primary)
+
+
+        .message-count
+            background: var(--color-danger)
+            color: var(--color-white)
+            padding: 2px 10px
+            font-size: 11px
+            border-radius: var(--border-radius-1)
+
+
+        
+
+main
+    margin-top: 1.4rem
+
+    h1, h2, h3, h4
+        color: var(--color-dark)
+
+    .date
+        display: inline-block
+        background: var(--color-light)
+        border-radius: var(--border-radius-1)
+        margin-top: 1rem
+        padding: 0.5rem 1.6rem
+
+        input[type="date"]
+            background: transparent
+            color: var(--color-dark)
+
+    .insights
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 1.6rem
+
+
+        h3
+            margin: 1rem 0 0.6rem
+            font-size: 1rem
+
+
+        .sales svg circle
+            stroke-dasharray: 200
+            stroke-dashoffset: -30
+
+        .expenses svg circle
+            stroke-dasharray: 80
+            stroke-dashoffset: 20
+
+        .income svg circle
+            stroke-dasharray: 110
+            stroke-dashoffset: 35
+
+        
+        .progress
+            position: relative
+            width: 92px
+            height: 92px
+            border-radius: 50%
+
+            .number
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                display: flex
+                align-items: center
+                justify-content: center
+
+
+        svg
+            width: 7rem
+            height: 7rem
+
+            circle
+                fill: none
+                stroke: var(--color-primary)
+                stroke-width: 14
+                stroke-linecap: round
+                transform: translate(5px 5px)
+
+
+
+    .insights > div
+        background: var(--color-white)
+        padding: var(--card-padding)
+        border-radius: var(--card-border-radius)
+        margin-top: 1rem
+        box-shadow: var(--box-shadow)
+        transition: all 300ms ease
+
+
+    .insights > div:hover
+        box-shadow: none
+
+    .insights > div span
+        background: var(--color-primary)
+        padding: 0.5rem
+        border-radius: 50%
+        color: var(--color-white)
+        font-size: 2rem
+
+    .insights > div.expenses span
+        background: var(--color-danger)
+
+    .insights > div.income span
+        background: var(--color-success)
+
+    .insights > div .middle
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+
+
+    .recent-orders
+
+        margin-top: 2rem
+
+        h2
+            margin-bottom: 0.8rem
+
+        table
+            background: var(--color-white)
+            width: 100%
+            border-radius: var(--card-border-radius)
+            padding: var(--card-padding)
+            text-align: center
+            box-shadow: var(--box-shadow)
+            transition: all 300ms ease
+
+            &:hover
+                box-shadow: none
+
+            td
+                height: 2.8rem
+                border-bottom: 1px solid var(--color-light)
+
+            tr
+                color: var(--color-dark-variant)
+
+                &:last-child td
+                    border: none
+        
+        a
+            text-align: center
+            display: block
+            margin: 1rem auto
+            color: var(--color-primary)
+                
+
+.right
+    margin-top: 1.4rem
+
+    .menu-btn
+        display: none
+
+    .top
+        display: flex
+        justify-content: end
+        gap: 2rem
+
+    .theme-toggler
+        background: var(--color-light)
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 4.2rem
+        height: 1.6rem
+        cursor: pointer
+        border-radius: var(--border-radius-1)
+        
+
+        span
+            font-size: 1.2rem
+            width: 50%
+            height: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+            &:first-child
+                color: white
+
+
+        .active
+            background: var(--color-primary)
+            color: white
+            border-radius: var(--border-radius-1)
+    
+    .profile
+        display: flex
+        column-gap: 2rem
+        text-align: right
+
+
+
+    .recent-updates
+        h1, h2, h3, h4
+            color: var(--color-dark)
+
+        margin-top: 1rem
+
+        h2
+            margin-bottom: 0.8rem
+
+        .updates
+            background: var(--color-white)
+            padding: var(--card-padding)
+            border-radius: var(--card-border-radius)
+            box-shadow: var(--box-shadow)
+            transition: all 300ms ease
+
+            &:hover
+                box-shadow: none
+
+                
+
+        .update
+            display: grid
+            grid-template-columns: 2.6rem auto
+            gap: 1rem
+            margin-bottom: 1rem
+            &:last-child
+                margin-bottom: 0
+
+    
+    .sales-analytics
+        h1, h2, h3, h4
+            color: var(--color-dark)
+
+        margin-top: 2rem
+
+        h2
+            margin-bottom: 0.8rem
+
+        .item
+            display: flex
+            align-items: center
+            gap: 1rem
+            margin-bottom: 0.7rem
+
+            background: var(--color-white)
+            padding: 1.4rem var(--card-padding)
+            border-radius: var(--card-border-radius)
+            box-shadow: var(--box-shadow)
+            transition: all 300ms ease
+
+            &:hover
+                box-shadow: none
+
+
+            .right
+                display: flex
+                justify-content: space-between
+                align-items: flex-start
+                margin: 0
+                width: 100%
+
+        .icon
+            padding: 0.6rem
+            color: var(--color-white)
+            background: var(--color-primary)
+            border-radius: 50%
+            display: flex
+            align-items: center
+
+        .online .icon
+            background: var(--color-primary)
+
+        .offline .icon
+            background: var(--color-danger)
+
+        .customers .icon
+            background: var(--color-success)
+
+
+
+
+
+
+
+        .add-product
+            background-color: transparent
+            border: 2px dashed var(--color-primary)
+            color: var(--color-primary)
+            display: flex
+            align-items: center
+            justify-content: center
+            cursor: pointer
+
+            &:hover
+                background: var(--color-primary)
+                color: white
+
+            h3
+                font-weight: 600
+
+        .container-product
+            display: flex
+            align-items: center
+            gap: 0.6rem
+
+
+/*------------------------MEDIA QUERIES-----------------------*/
+
+
+@media (max-width: 1200px)
+
+    .container
+        width: 94%
+        grid-template-columns: 7rem auto 23rem
+
+    aside
+        .logo h2
+            display: none
+
+        .sidebar h3
+            display: none
+
+        .sidebar
+            a
+                width: 5.6rem
+                &:last-child
+                    position: relative
+                    margin-top: 1.8rem
+
+    main .insights        
+        grid-template-columns: 1fr
+        gap: 0
+
+    main .recent-orders
+        width: 94%
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        margin: 2rem 0 0 8.8rem
+
+        table
+            width: 83vw
+
+    main table thead tr th
+        &:first-child
+            display: none
+    main table tbody tr td
+        &:last-child
+            display: none
+
+        
+
+
+/*------------------------MEDIA QUERIES-----------------------*/
+
+@media (max-width: 768px)
+    .container
+        width: 100%
+        grid-template-columns: 1fr
+
+    aside
+        position: fixed
+        left: -100%
+        background: var(--color-white)
+        width: 18rem
+        z-index: 3
+        box-shadow: 1rem 3rem 4rem var(--color-light)
+        height: 100vh
+        padding-right: var(--card-padding)
+        display: none
+        animation: showMenu 400ms ease forwards
+
+    @keyframes showMenu 
+        to
+            left: 0
+        
+
+            
+
+
+    aside
+        .logo
+            margin-right: 1rem
+            h2
+                display: inline
+        .sidebar
+            h3
+                display: inline
+
+            a
+                width: 100%
+                height: 3.4rem
+                &:last-child
+                    position: absolute
+                    bottom: 5rem
+        .close
+            display: inline
+            cursor: pointer
+        
+    main
+        margin-top: 8rem
+        padding: 0 1rem
+
+        .recent-orders
+            position: relative
+            margin: 3rem 0 0 0
+            width: 100%
+
+            table
+                width: 100%
+                margin: 0 
+
+    .right
+        width: 94%
+        margin: 0 auto 4rem
+
+        .top
+            position: fixed
+            top: 0
+            left: 0
+            align-items: center
+            padding: 0 0.8rem
+            height: 4.6rem
+            background: var(--color-white)
+            width: 100%
+            margin: 0
+            z-index: 2
+            box-shadow: 0 1rem 1rem var(--color-light)
+
+            .theme-toggler
+                width: 4.4rem
+                position: absolute
+                left: 66%
+
+            button
+                display: inline-block
+                background: transparent
+                cursor: pointer
+                color: var(--color-danger)
+                position: absolute
+                left: 1rem
+                span
+                    font-size: 2rem
+        .profile
+            .info
+                display: none
+        
+
+
+    
